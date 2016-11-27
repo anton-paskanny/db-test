@@ -1,0 +1,54 @@
+.search-bar
+  float: right
+  width: 240px
+  padding-top: 20px
+
+  &__form
+    position: relative
+    width: 100%
+
+  &__input[type="text"]
+    width: inherit
+    padding: 3px 0
+    padding-left: 5px
+    padding-right: 25px
+    border: 1px solid #d1d1d1
+    border-radius: 3px
+    outline: none
+
+  &__btn-submit
+    position: absolute
+    top: 50%
+    right: 5px
+    margin-top: -8px
+    padding: 0
+    background-color: #fff
+    background-image: url('../img/sprite.png')
+    background-repeat: no-repeat
+    background-size: 98px 77px
+    +sprite($search-icon)
+    border: none
+    outline: none
+
+    &:hover
+      cursor: pointer
+      +sprite($search-icon-hover)
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2)
+  .search-bar
+    &__btn-submit
+      background-image: url('../img/sprite-2x.png')
+
+@media all and (max-width: $xsmall-bp)
+  .search-bar
+    float: none
+    margin: 0 auto
+
+    &__label
+      &::after
+        right: 10px
+
+    &__input[type="text"]
+      padding: 10px 10px
+      padding-right: 30px

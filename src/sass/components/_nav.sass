@@ -1,0 +1,80 @@
+.nav
+  margin-top: 26px
+  border-top: 1px solid $border-color
+
+  &__row
+    display: none
+    font-size: 0
+
+  &__mobile-title
+    display: none
+    vertical-align: middle
+    width: 50%
+    +convertToRem(16, 16)
+    font-weight: bold
+    color: $dark-gray
+
+  &__list
+    margin-left: 57px
+    font-size: 0
+    transition: max-height .4s
+
+  &__item
+    display: inline-block
+    vertical-align: middle
+
+  &__link
+    display: block
+    padding: 14px 20px
+    +convertToRem(18, 20)
+    font-weight: bold
+    color: $nav-links-text
+
+    &:hover
+      background-color: $nav-links-hover
+      color: $base-text-color
+
+    &:active
+      background-color: $nav-links-active
+
+@media all and (max-width: $small-bp)
+  .nav
+
+    &__list
+      margin-left: 0
+      text-align: center
+
+    &__link
+      padding: 14px 15px
+
+@media all and (max-width: $xsmall-bp)
+  .container
+
+    &--nav
+      width: 240px
+
+  .nav
+
+    &__row
+      display: block
+      padding: 10px 0
+
+      &::after
+        content: ''
+        display: table
+        clear: both
+
+    &__mobile-title
+      display: inline-block
+
+    &__list
+      max-height: 0
+      overflow: hidden
+
+      &--active
+        max-height: 400px
+
+    &__item
+      display: block
+      text-align: center
+      border-top: 1px solid $border-color

@@ -1,0 +1,43 @@
+.hamburger
+  display: none
+  width: 50%
+  vertical-align: middle
+  padding: 0
+  background: none
+  outline: none
+  border: none
+
+  &__inner
+    display: block
+    width: 30px
+    height: 10px
+    margin-left: auto
+    position: relative
+
+  &__line
+    position: absolute
+    top: 0
+    left: 0
+    width: inherit
+    height: 2px
+    display: block
+    background-color: $no-active-color
+
+    &:nth-child(2)
+      top: 4px
+
+    &:last-child
+      top: 8px
+
+
+  &--active
+    i
+      background-color: $main-color
+
+  &:hover
+    cursor: pointer
+
+
+@media all and (max-width: $xsmall-bp)
+  .hamburger
+    display: inline-block

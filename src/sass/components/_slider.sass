@@ -1,0 +1,112 @@
+.container
+
+  &--slider
+    padding-left: 77px
+    padding-right: 179px
+
+.slider
+  position: relative
+  min-height: 445px
+  background-color: $dark-gray
+
+  &__items
+    min-height: inherit
+
+  &__item
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    min-height: inherit
+    padding-top: 60px
+    z-index: 1
+
+    &--current
+      z-index: 2
+
+    &:first-child
+      background-image: url('../img/chemistry.jpg')
+      background-repeat: no-repeat
+      background-size: cover
+
+    &:not(:first-child)
+      background-color: $dark-gray
+
+  // content in slider
+  &__notice
+    display: inline-block
+    vertical-align: middle
+    padding: 2px 6px
+    font-weight: bold
+    text-transform: uppercase
+    background-color: $main-color
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3)
+
+  &__title
+    margin-top: 10px
+    padding-right: 10%
+    +convertToRem(60, 48)
+    font-weight: bold
+
+  &__desc
+    margin-top: 20px
+    padding-right: 85px
+    font-family: $Arial
+    +convertToRem(16, 22)
+    font-weight: bold
+
+  // controls for slider
+  &__controls
+    position: absolute
+    bottom: 27px
+    left: 0
+    width: 100%
+    text-align: center
+    z-index: 4
+
+  &__control
+    display: inline-block
+    vertical-align: middle
+    width: 10px
+    height: 10px
+    margin-right: 17px
+    border: 1px solid #fff
+    background-color: transparent
+
+    &:last-child
+      margin-right: 0
+
+    &:hover
+      cursor: pointer
+      background-color: $controls-hover-bg
+
+    &--current
+      background-color: $main-color
+      border-color: $main-color
+
+      &:hover
+        cursor: auto
+        background-color: $main-color
+
+
+@media all and (max-width: $xsmall-bp)
+  .container
+
+    &--slider
+      text-align: center
+      padding: 0 10px
+
+  .slider
+
+    &__title
+      margin-top: 20px
+      padding-right: 0
+      +convertToRem(32, 28)
+
+    &__desc
+      padding-right: 0
+
+    &__control
+      width: 16px
+      height: 16px

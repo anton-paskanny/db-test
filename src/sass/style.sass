@@ -1,0 +1,48 @@
+@import normalize
+@import helpers/png-sprite
+@import helpers/mixins
+@import helpers/variables
+
+*
+  box-sizing: border-box
+
+html
+  font-size: 100%
+
+body
+  font-family: $Roboto
+  +convertToRem(16, 22)
+  font-weight: normal
+  color: $base-text-color
+  background-color: $body-bg
+
+h1, h2, p, ul
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+a
+  text-decoration: none
+
+.global-wrapper
+  max-width: 1012px
+  min-width: 320px
+  margin: 0 auto
+  padding-bottom: 115px
+  background-color: $content-bg
+
+.container
+  max-width: 942px
+  margin: 0 auto
+
+// components
+//
+@import components/header
+@import components/logo
+@import components/search-bar
+@import components/nav
+@import components/hamburger
+@import components/slider
+@import components/service
